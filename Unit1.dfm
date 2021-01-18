@@ -3,6 +3,7 @@ object Form1: TForm1
   Top = 251
   Width = 1030
   Height = 536
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Ping Pong'
   Color = clBtnFace
   UseDockManager = True
