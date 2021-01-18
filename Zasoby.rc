@@ -1,0 +1,6 @@
+#include "zasoby.rh"
+
+ID_WAV RCDATA "Ping Pong.exe"
+
+ID_WAV1 RCDATA "snd/Ping.wav"
+ID_WAV2 RCDATA "snd/applause8.wav"

@@ -1,0 +1,7 @@
+#ifndef ZASOBY_RH
+#define ZASOBY_RH
+
+#define ID_WAV1 1000
+#define ID_WAV2 1001
+
+#endif

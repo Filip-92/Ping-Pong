@@ -5,6 +5,7 @@
 #include "mmsystem.h"
 
 #include "Unit1.h"
+#include "Zasoby.rh"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -47,7 +48,7 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
     y = -y;
 
     //punkt dla gracza drugiego
-    if(pilka -> Left <= tlo -> Left)
+    if((pilka -> Left + 5 <= tlo -> Left) || (pilka -> Left + 5 < paddle1 -> Left))
     {
        if (punkty_gracz2 < 10)
        {
@@ -94,7 +95,8 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
     }
 
     //punkt dla gracza pierwszego
-    if(pilka -> Left + pilka -> Width + 5 >= tlo -> Width)
+    if((pilka -> Left + pilka -> Width - 5 >= tlo -> Width) ||
+    (pilka -> Left + pilka -> Width > paddle2 -> Left + paddle2 -> Width))
     {
 
        if (punkty_gracz1 < 10)
