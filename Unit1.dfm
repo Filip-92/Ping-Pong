@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 511
-  Top = 251
+  Left = 414
+  Top = 855
   Width = 1030
   Height = 536
   BorderIcons = [biSystemMenu, biMinimize]
@@ -869,6 +869,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
+    Transparent = True
     Visible = False
   end
   object Button2: TButton

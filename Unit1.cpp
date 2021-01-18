@@ -5,7 +5,7 @@
 #include "mmsystem.h"
 
 #include "Unit1.h"
-#include "Zasoby.rh"
+#include "resources.rh"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -13,9 +13,9 @@ TForm1 *Form1;
 
 int x = -8;
 int y = -8;
-int punkty_gracz1 = 0;
-int punkty_gracz2 = 0;
-int odbicie = 0;
+int punkty_gracz1 = 0;  //points_player1
+int punkty_gracz2 = 0;  //points_player2
+int odbicie = 0;        //bounce
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -36,7 +36,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
 {
-    pilka -> Left += x;
+    pilka -> Left += x;  //ball
     pilka -> Top += y;
 
     //odbij od gornej sciany
@@ -44,11 +44,11 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
     y = -y;
 
     //odbij od dolnej sciany
-    if (pilka -> Top + pilka -> Height + 10 >= tlo -> Height)
+    if (pilka -> Top + pilka -> Height + 5 >= tlo -> Top + tlo -> Height)
     y = -y;
 
     //punkt dla gracza drugiego
-    if((pilka -> Left + 5 <= tlo -> Left) || (pilka -> Left + 5 < paddle1 -> Left))
+    if(pilka -> Left <= paddle1 -> Left - 15)
     {
        if (punkty_gracz2 < 10)
        {
@@ -68,7 +68,7 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
 
        if (punkty_gracz2 == 10)
        {
-       pilka_Timer -> Enabled = false;
+       pilka_Timer -> Enabled = false;   //ball_Timer
        pilka -> Visible = false;
        BitBtn1 -> Visible = false;
        Label1 -> Visible = true;
@@ -80,9 +80,9 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
        Button2 -> Caption = "Liczba odbiæ: " +IntToStr(odbicie);
        }
     }
-    else if ((pilka->Left < paddle1 ->Left + paddle1 ->Width &&
-           pilka ->Top + pilka -> Height/2 <= paddle1 -> Top + paddle1 -> Height &&
-           pilka ->Top + pilka -> Height/2 >= paddle1 -> Top))
+    else if ((pilka -> Left <= paddle1 -> Left + paddle1 -> Width &&
+           pilka -> Top + pilka -> Height >= paddle1 -> Top &&
+           pilka -> Top <= paddle1 -> Top + paddle1 -> Height))
     {
         if (y>0 || y<0)
         x = -x;
@@ -95,8 +95,7 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
     }
 
     //punkt dla gracza pierwszego
-    if((pilka -> Left + pilka -> Width - 5 >= tlo -> Width) ||
-    (pilka -> Left + pilka -> Width > paddle2 -> Left + paddle2 -> Width))
+    if(pilka -> Left > paddle2 -> Left)
     {
 
        if (punkty_gracz1 < 10)
@@ -130,8 +129,8 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
        }
     }
     else if ((pilka -> Left + pilka -> Width >= paddle2 -> Left &&
-           pilka -> Top + pilka -> Height/2 <= paddle2 -> Top + paddle2 -> Height &&
-           pilka -> Top + pilka -> Height/2 >= paddle2 -> Top))
+           pilka -> Top + pilka -> Height >= paddle2 -> Top &&
+           pilka -> Top <= paddle2 -> Top + paddle2 -> Height))
     {
         if (y>0 || y<0)
         x = -x;
