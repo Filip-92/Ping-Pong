@@ -1,0 +1,4 @@
+#include "resources.rh"
+
+ID_WAV1 WAVE "C:\Builder\Ping Pong\snd\Ping.wav"
+ID_WAV2 WAVE "C:\Builder\Ping Pong\snd\applause8.wav"

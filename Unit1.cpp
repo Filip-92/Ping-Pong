@@ -55,9 +55,10 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
        pilka_Timer -> Enabled = false;
        pilka -> Visible = false;
        BitBtn1 -> Visible = true;
+       BitBtn1 -> DragCursor = crHandPoint;
        Button3 -> Visible = true;
        punkty_gracz2++;
-       sndPlaySound("snd/Applause8.wav", SND_ASYNC);
+       PlaySound(MAKEINTRESOURCE(ID_WAV2), GetModuleHandle(NULL), SND_ASYNC | SND_RESOURCE);
        Label1 -> Visible = true;
        Label1 -> Caption = " Wygrywa gracz prawy > ";
        Label2 -> Visible = true;
@@ -73,7 +74,7 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
        BitBtn1 -> Visible = false;
        Label1 -> Visible = true;
        Label1 -> Caption = " Gracz 2 zwyciê¿y³! > ";
-       sndPlaySound("snd/Applause8.wav", SND_ASYNC);
+       PlaySound(MAKEINTRESOURCE(ID_WAV2), GetModuleHandle(NULL), SND_ASYNC | SND_RESOURCE);
        Button3 -> Visible = true;
        Label2 -> Caption = IntToStr(punkty_gracz1) + " : " + IntToStr(punkty_gracz2);
        Button2 -> Visible = true;
@@ -91,7 +92,7 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
         {
         pilka_Timer -> Interval--;
         }
-        sndPlaySound("snd/Ping.wav", SND_ASYNC);
+        PlaySound(MAKEINTRESOURCE(ID_WAV1), GetModuleHandle(NULL), SND_ASYNC | SND_RESOURCE);
     }
 
     //punkt dla gracza pierwszego
@@ -103,9 +104,10 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
        pilka_Timer -> Enabled = false;
        pilka -> Visible = false;
        BitBtn1 -> Visible = true;
+       BitBtn1 -> DragCursor = crHandPoint;
        Button3 -> Visible = true;
        punkty_gracz1++;
-       sndPlaySound("snd/Applause8.wav", SND_ASYNC);
+       PlaySound(MAKEINTRESOURCE(ID_WAV2), GetModuleHandle(NULL), SND_ASYNC | SND_RESOURCE);
        Label1 -> Visible = true;
        Label1 -> Caption = " < Wygrywa gracz lewy ";
        Label2 -> Visible = true;
@@ -121,7 +123,7 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
        BitBtn1 -> Visible = false;
        Label1 -> Visible = true;
        Label1 -> Caption = " < Gracz 1 zwyciê¿y³! ";
-       sndPlaySound("snd/Applause8.wav", SND_ASYNC);
+       PlaySound(MAKEINTRESOURCE(ID_WAV2), GetModuleHandle(NULL), SND_ASYNC | SND_RESOURCE);
        Button3 -> Visible = true;
        Label2 -> Caption = IntToStr(punkty_gracz1) + " : " + IntToStr(punkty_gracz2);
        Button2 -> Visible = true;
@@ -139,7 +141,7 @@ void __fastcall TForm1::pilka_TimerTimer(TObject *Sender)
         {
         pilka_Timer -> Interval--;
         }
-        sndPlaySound("snd/Ping.wav", SND_ASYNC);
+        PlaySound(MAKEINTRESOURCE(ID_WAV1), GetModuleHandle(NULL), SND_ASYNC | SND_RESOURCE);
     }
 }
 //---------------------------------------------------------------------------

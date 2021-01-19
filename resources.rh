@@ -1,5 +1,5 @@
-#ifndef ZASOBY_RH
-#define ZASOBY_RH
+#ifndef RESOURCES_RH
+#define RESOURCES_RH
 
 #define ID_WAV1 1000
 #define ID_WAV2 1001

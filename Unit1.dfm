@@ -1,8 +1,9 @@
 object Form1: TForm1
-  Left = 414
-  Top = 855
+  Left = 401
+  Top = 263
   Width = 1030
   Height = 536
+  Align = alCustom
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Ping Pong'
   Color = clBtnFace
