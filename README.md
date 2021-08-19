@@ -8,6 +8,8 @@ Aby rozpocząć grę, wciśnij przycisk 'Nowa Gra'.
 Po każdym punkcie, możesz kontynuować grę za pomocą przycisku 'Kolejna Runda' lub
 rozpocząć grę od nowa za pomocą przycisku 'Nowa Gra'.
 
+![Ping Pong](https://user-images.githubusercontent.com/75435412/130130034-23391520-376f-465b-b4cc-7cd44681d334.JPG)
+
 ------------------------------------------------------------------------------------------------
 
 Welcome to Ping Pong. It is a game designed for two players.
